@@ -11,7 +11,7 @@ pipeline {
                 script {
                         // i want to define a varible 
                     // def variablenam = "value"
-                    def course = "k8s"
+                    def course = "agenticai"
                     println("Thanks for enrolling to ${course} course")
                 }
             }
