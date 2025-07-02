@@ -8,11 +8,18 @@ pipeline {
         }
         stage ('groovystage') {
             steps {
+                echo "****** Welcomd to groovy block******"
                 script {
                         // i want to define a varible 
                     // def variablenam = "value"
-                    def course = "agenticai"
-                    println("Thanks for enrolling to ${course} course")
+                    def course = "k8s"
+
+                    // if condition
+                    if (course == "k8s")
+                        println("Thanks for enrolling")
+                    else
+                        println("Do enroll for k8s")
+                    //println("Thanks for enrolling to ${course} course")
                 }
             }
         }
@@ -20,3 +27,4 @@ pipeline {
 }
 
 // ${course} , ${env.course}, ${params.course}
+
