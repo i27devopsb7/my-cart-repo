@@ -12,7 +12,7 @@ pipeline {
                 script {
                         // i want to define a varible 
                     // def variablenam = "value"
-                    def course = "k8s"
+                    def course = "rag"
 
                     // if condition
                     if (course == "k8s")
