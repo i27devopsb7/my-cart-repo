@@ -14,6 +14,17 @@ pipeline{
             steps {
                 echo "Hello, welcome to maven section"
                 sh "mvn --version"
+                // mvn 3.8.8 > java 21
+            }
+        }
+        stage ('differntmaven'){
+            tools {
+                jdk 'JDK-17'
+            }
+            steps {
+                echo "Hello, coming from differnt java version"
+                sh 'mvn --version'
+                // mvn 3.8.8 > java 21
             }
         }
     }
