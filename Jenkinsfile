@@ -1,9 +1,7 @@
 // tool section at the pipeline level
 pipeline{
     // agent block
-    agent {
-        label "java-slave"
-    }
+    agent any
 
     // tools block at the pipeline level
     tools {
