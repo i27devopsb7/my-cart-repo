@@ -1,30 +1,26 @@
-// tool section at the pipeline level
-pipeline{
-    // agent block
-    agent any
-
-    // tools block at the pipeline level
-    tools {
-        maven 'maven-3.8.8'
+pipeline {
+    agent {
+        label 'java-slave'
     }
-
-    // stages block 
     stages {
-        stage("Maven") {
+        stage ('Build'){
             steps {
-                echo "Hello, welcome to maven section"
-                sh "mvn --version"
-                // mvn 3.8.8 > java 21
+                echo "Build stage from Main Branch"
             }
         }
-        stage ('differntmaven'){
-            tools {
-                jdk 'JDK-17'
-            }
+        stage ('Scans'){
             steps {
-                echo "Hello, coming from differnt java version"
-                sh 'mvn --version'
-                // mvn 3.8.8 > java 21
+                echo "Scans stage from Main Branch"
+            }
+        }
+        stage ('dockerbuild'){
+            steps {
+                echo "docker stage from Main Branch"
+            }
+        }
+        stage ('deployment'){
+            steps {
+                echo "deploying from Main Branch"
             }
         }
     }
