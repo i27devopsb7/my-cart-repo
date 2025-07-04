@@ -1,13 +1,13 @@
-pipeline{
-    agent any 
+// timeout code 
+pipeline {
+    agent {
+        label 'java-slave'
+    }
     stages {
-        stage('Build') {
+        stage ('Build'){
             steps {
-                retry(3){
-                    echo "Welcome to jenkins pipeline"
-                    error "This will give some error"
-                }
-            echo "***** Printing after multiple retries *******"
+                echo "*********** Sleeping for 60 seconds************"
+                sleep 60
             }
         }
     }
