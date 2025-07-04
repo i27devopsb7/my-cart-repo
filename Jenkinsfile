@@ -1,8 +1,16 @@
 // tool section at the pipeline level
 pipeline{
+    // agent block
     agent {
         label "java-slave"
     }
+
+    // tools block at the pipeline level
+    tools {
+        maven 'maven-3.8.8'
+    }
+
+    // stages block 
     stages {
         stage("Maven") {
             steps {
